@@ -1,0 +1,917 @@
+<html>
+<head>
+<title>Student Registration Form</title>
+ <style>
+   * {
+     box-sizing: border-box;
+     }
+
+    body {
+     margin: 0;
+     padding: 25px;
+     background-color: white;
+     font-family: Arial, sans-serif;
+     color: black;
+    }
+
+     .form-container {
+      width: 850px;
+       max-width: 100%;
+       margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .registration-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .registration-table td {
+            padding: 6px 8px;
+            vertical-align: middle;
+        }
+
+        .label {
+            width: 32%;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .control {
+            width: 68%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #777;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 70px;
+            resize: vertical;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+        }
+
+        .note {
+            display: block;
+            font-size: 12px;
+            font-weight: normal;
+            margin-top: 3px;
+        }
+
+        .qualification-title {
+            font-weight: bold;
+            padding-top: 15px !important;
+            padding-bottom: 8px !important;
+        }
+
+        .qualification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3px;
+        }
+
+        .qualification-table th,
+        .qualification-table td {
+            border: 1px solid #777;
+            padding: 6px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .qualification-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .qualification-table td input {
+            width: 100%;
+            border: none;
+            padding: 4px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .qualification-table td input:focus {
+            outline: 1px solid #555;
+            background-color: #f9f9f9;
+        }
+
+        .serial {
+            width: 8%;
+        }
+
+        .exam {
+            width: 22%;
+        }
+
+        .board {
+            width: 25%;
+        }
+
+        .percentage {
+            width: 20%;
+        }
+
+        .year {
+            width: 25%;
+        }
+
+        .qualification-notes {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .qualification-notes td {
+            padding: 2px 6px 4px;
+            font-size: 12px;
+        }
+
+        .qualification-notes .blank {
+            width: 30%;
+        }
+
+        .qualification-notes .ten {
+            width: 45%;
+            text-align: left;
+        }
+
+        .qualification-notes .decimal {
+            width: 25%;
+            text-align: left;
+        }
+
+        .buttons {
+            text-align: center;
+            padding-top: 18px !important;
+        }
+
+        button {
+            padding: 7px 22px;
+            margin: 0 5px;
+            border: 1px solid #555;
+            background-color: #e9e9e9;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #d8d8d8;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .registration-table,
+            .registration-table tbody,
+            .registration-table tr,
+            .registration-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .label {
+                padding-bottom: 2px;
+            }
+
+            .control {
+                padding-top: 2px;
+            }
+
+            .qualification-table {
+                font-size: 11px;
+            }
+
+            .qualification-table th,
+            .qualification-table td {
+                padding: 4px 2px;
+            }
+
+            .qualification-table td input {
+                font-size: 11px;
+                padding: 3px 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+    <h1>STUDENT REGISTRATION FORM</h1>
+      <form>
+          <table class="registration-table">
+            <tr>
+                <td class="label">FIRST NAME:</td>
+                <td class="control">
+                <input
+                    type="text"
+                    name="first_name"
+                    maxlength="30">       
+                </td>
+                </tr>
+                <tr>
+                    <td class="label">LAST NAME:</td>
+
+                    <td class="control">
+                        <input
+                            type="text"
+                            name="last_name"
+                            maxlength="30">
+                    </td>
+                </tr>
+
+
+                <!-- Email -->
+                <tr>
+                    <td class="label">EMAIL ID:</td>
+
+                    <td class="control">
+                        <input
+                            type="email"
+                            name="email"
+                        >
+                    </td>
+                </tr>
+
+
+                <!-- Date of Birth -->
+                <tr>
+                    <td class="label">DOB:</td>
+
+                    <td class="control">
+                        <input
+                            type="date"
+                            name="dob"
+                        >
+                    </td>
+                </tr>
+
+
+                <!-- Mobile -->
+                <tr>
+                    <td class="label">MOBILE NUMBER:</td>
+
+                    <td class="control">
+                        <input
+                            type="tel"
+                            name="mobile"
+                            maxlength="10"
+                            inputmode="numeric"
+                        >
+                    </td>
+                </tr>
+
+
+                <!-- Gender -->
+                <tr>
+                    <td class="label">GENDER:</td>
+
+                    <td class="control">
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                >
+                                Male
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Female"
+                                >
+                                Female
+                            </label>
+
+                        </div>
+
+                    </td>
+                </tr>
+
+
+                <!-- Address -->
+                <tr>
+                    <td class="label">ADDRESS:</td>
+
+                    <td class="control">
+                        <textarea name="address"></textarea>
+                    </td>
+                </tr>
+
+
+                <!-- City -->
+                <tr>
+                    <td class="label">CITY:</td>
+
+                    <td class="control">
+
+                        <input
+                            type="text"
+                            name="city"
+                            maxlength="30"
+                        >
+
+                        <span class="note">
+                            (max 30 characters)
+                        </span>
+
+                    </td>
+                </tr>
+
+
+                <!-- Pin Code -->
+                <tr>
+                    <td class="label">PIN CODE:</td>
+
+                    <td class="control">
+
+                        <input
+                            type="text"
+                            name="pin"
+                            maxlength="6"
+                            inputmode="numeric"
+                        >
+
+                        <span class="note">
+                            (6 digit number)
+                        </span>
+
+                    </td>
+                </tr>
+
+
+                <!-- State -->
+                <tr>
+                    <td class="label">STATE:</td>
+
+                    <td class="control">
+
+                        <select name="state">
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option value="Kerala">
+                                Kerala
+                            </option>
+
+                            <option value="Karnataka">
+                                Karnataka
+                            </option>
+
+                            <option value="Tamil Nadu">
+                                Tamil Nadu
+                            </option>
+
+                            <option value="Andhra Pradesh">
+                                Andhra Pradesh
+                            </option>
+
+                            <option value="Telangana">
+                                Telangana
+                            </option>
+
+                            <option value="Maharashtra">
+                                Maharashtra
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </td>
+                </tr>
+
+
+                <!-- Country -->
+                <tr>
+                    <td class="label">COUNTRY:</td>
+
+                    <td class="control">
+
+                        <select name="country">
+
+                            <option value="">
+                                Select Country
+                            </option>
+
+                            <option value="India">
+                                India
+                            </option>
+
+                            <option value="USA">
+                                USA
+                            </option>
+
+                            <option value="UK">
+                                UK
+                            </option>
+
+                            <option value="Australia">
+                                Australia
+                            </option>
+
+                            <option value="Canada">
+                                Canada
+                            </option>
+
+                        </select>
+
+                    </td>
+                </tr>
+
+
+                <!-- Hobbies -->
+                <tr>
+                    <td class="label">HOBBIES:</td>
+
+                    <td class="control">
+
+                        <div class="checkbox-group">
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="hobbies"
+                                    value="Dancing"
+                                >
+                                Dancing
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="hobbies"
+                                    value="Singing"
+                                >
+                                Singing
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="hobbies"
+                                    value="Painting"
+                                >
+                                Painting
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="hobbies"
+                                    value="Reading"
+                                >
+                                Reading
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="hobbies"
+                                    value="Other"
+                                >
+                                Other
+                            </label>
+
+                        </div>
+
+                    </td>
+                </tr>
+
+
+                <!-- Qualification -->
+                <tr>
+
+                    <td
+                        colspan="2"
+                        class="qualification-title"
+                    >
+                        QUALIFICATION
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td colspan="2">
+
+                        <table class="qualification-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="serial">
+                                        S.NO
+                                    </th>
+
+                                    <th class="exam">
+                                        Examination
+                                    </th>
+
+                                    <th class="board">
+                                        BOARD
+                                    </th>
+
+                                    <th class="percentage">
+                                        PERCENTAGE
+                                    </th>
+
+                                    <th class="year">
+                                        YEAR OF PASSING
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <!-- Qualification 1 -->
+
+                                <tr>
+
+                                    <td>1</td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="exam1"
+                                            placeholder="Class X"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="board1"
+                                            placeholder="Board"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="percentage1"
+                                            placeholder="%"
+                                            min="0"
+                                            max="100"
+                                            step="0.01"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="year1"
+                                            placeholder="Year"
+                                            min="1900"
+                                            max="2100"
+                                        >
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Qualification 2 -->
+
+                                <tr>
+
+                                    <td>2</td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="exam2"
+                                            placeholder="Class XII"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="board2"
+                                            placeholder="Board"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="percentage2"
+                                            placeholder="%"
+                                            min="0"
+                                            max="100"
+                                            step="0.01"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="year2"
+                                            placeholder="Year"
+                                            min="1900"
+                                            max="2100"
+                                        >
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Qualification 3 -->
+
+                                <tr>
+
+                                    <td>3</td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="exam3"
+                                            placeholder="Degree"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="board3"
+                                            placeholder="University"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="percentage3"
+                                            placeholder="%"
+                                            min="0"
+                                            max="100"
+                                            step="0.01"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="year3"
+                                            placeholder="Year"
+                                            min="1900"
+                                            max="2100"
+                                        >
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Qualification 4 -->
+
+                                <tr>
+
+                                    <td>4</td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="exam4"
+                                            placeholder="Masters"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="board4"
+                                            placeholder="University"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="percentage4"
+                                            placeholder="%"
+                                            min="0"
+                                            max="100"
+                                            step="0.01"
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="year4"
+                                            placeholder="Year"
+                                            min="1900"
+                                            max="2100"
+                                        >
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <table class="qualification-notes">
+
+                            <tr>
+
+                                <td class="blank"></td>
+
+                                <td class="ten">
+                                    (10 characters)
+                                </td>
+
+                                <td class="decimal">
+                                    (upto 2 decimals)
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Course -->
+                <tr>
+
+                    <td class="label">
+                        COURSE APPLIED FOR:
+                    </td>
+
+                    <td class="control">
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="course"
+                                    value="MCA"
+                                >
+                                MCA
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="course"
+                                    value="M.Tech"
+                                >
+                                M.Tech
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="course"
+                                    value="M.E"
+                                >
+                                M.E
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="course"
+                                    value="M.Sc"
+                                >
+                                M.Sc
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="course"
+                                    value="Ph.D"
+                                >
+                                Ph.D
+                            </label>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Password -->
+                <tr>
+
+                    <td class="label">
+                        PASSWORD:
+                    </td>
+
+                    <td class="control">
+
+                        <input
+                            type="password"
+                            name="password"
+                            maxlength="30"
+                        >
+
+                        <span class="note">
+                            (max 30 characters)
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Date of TC -->
+                <tr>
+
+                    <td class="label">
+                        Date of TC:
+                    </td>
+
+                    <td class="control">
+
+                        <input
+                            type="date"
+                            name="date_of_tc"
+                        >
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Buttons -->
+                <tr>
+
+                    <td
+                        colspan="2"
+                        class="buttons"
+                    >
+
+                        <button type="submit">
+                            SUBMIT
+                        </button>
+
+                        <button type="reset">
+                            RESET
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+

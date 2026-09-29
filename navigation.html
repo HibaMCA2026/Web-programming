@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navigation</title>
+
+<style>
+  .side-nav {
+    height: 100%;
+    width: 160px;
+    padding-top: 20px;
+    background-color: green;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .side-nav a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+  }
+
+  .side-nav a:hover {
+    color: red;
+  }
+
+  .main {
+    margin-left: 160px;
+    padding: 20px;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .content:target {
+    display: block;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="side-nav">
+  <a href="#About">About Us</a>
+  <a href="#Department">Department</a>
+  <a href="#Vision">Vision and Mission</a>
+  <a href="#Contact">Contact Us</a>
+</div>
+
+<div class="main">
+
+  <div id="About" class="content">
+    <h1>About Us</h1>
+    <p>
+      MEA Engineering College is accredited by NAAC. As per the data released
+      by APJ Abdul Kalam Technological University (KTU) on 15.06.2026, the
+      college has secured the first position in Malappuram district.
+    </p>
+  </div>
+
+  <div id="Department" class="content">
+    <h1>Departments</h1>
+    <p>MEA Engineering College in Vengoor currently lists these departments.</p>
+
+    <ul>
+      <li>Computer Science & Engineering (CSE)</li>
+      <li>Artificial Intelligence & Data Science</li>
+      <li>Electronics & Communication Engineering (ECE)</li>
+      <li>Electrical & Electronics Engineering (EEE)</li>
+      <li>Mechanical Engineering</li>
+      <li>Civil Engineering</li>
+    </ul>
+  </div>
+
+  <div id="Vision" class="content">
+    <h1>Vision and Mission</h1>
+    <p>
+      <strong>Our Vision:</strong>
+      To provide top class education to the community by achieving excellence
+      in engineering education.
+      <br><br>
+      <strong>Our Mission:</strong>
+      To provide the best faculty, excellent infrastructure, and commendable
+      facilities for an excellent academic ambiance and to encourage research.
+    </p>
+  </div>
+
+  <div id="Contact" class="content">
+    <h1>Contact Us</h1>
+
+    <h3>Address</h3>
+
+    <p>
+      MEA Engineering College<br>
+      Vengoor P.O, Perinthalmanna<br>
+      Malappuram District<br>
+      Kerala 679325
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
