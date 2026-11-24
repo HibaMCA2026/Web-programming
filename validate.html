@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+<style>
+    .error {
+            color: red;
+            font-size: 13px;
+           }
+    .success{
+            color: green;
+            font-weight: bold;
+            }
+</style>
+</head>
+<body>
+
+<h1>STUDENT REGISTRATION FORM</h1>
+<form id="registrationForm">
+<table border="1" width="100%" cellpadding="3">
+<tr>
+    <td>FIRST NAME:</td>
+    <td>
+        <input type="text" id="fname" name="fname">
+        <span class="error" id="fnameError"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>LAST NAME:</td>
+    <td>
+        <input type="text" id="lname" name="lname">
+        <span class="error" id="lnameError"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>EMAIL ID:</td>
+    <td>
+        <input type="text" id="email" name="email">
+        <span class="error" id="emailError"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>DOB</td>
+    <td><input type="date" name="dob"></td>
+</tr>
+
+<tr>
+    <td>MOBILE NUMBER</td>
+    <td>
+        <input type="tel" id="mobile" name="mobile"
+               maxlength="10">
+        <span class="error" id="mobileError"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>GENDER</td>
+    <td colspan="2">
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+    </td>
+</tr>
+
+<tr>
+    <td>ADDRESS</td>
+    <td><textarea rows="3" cols="20"></textarea></td>
+</tr>
+
+<tr>
+    <td>CITY</td>
+    <td><input type="text" name="city"></td>
+    <td>(max 30 characters)</td>
+</tr>
+
+<tr>
+    <td>PIN CODE</td>
+    <td><input type="text" name="pin" maxlength="6"></td>
+    <td>(6 digit number)</td>
+</tr>
+
+<tr>
+    <td>STATE</td>
+    <td><input type="text" name="state"></td>
+</tr>
+
+<tr>
+    <td>COUNTRY</td>
+    <td><input type="text" name="country"></td>
+</tr>
+
+<tr>
+    <td>HOBBIES</td>
+    <td colspan="2">
+        <input type="checkbox"> Dancing
+        <input type="checkbox"> Singing
+        <input type="checkbox"> Painting
+        <input type="checkbox"> Other
+        <input type="text">
+    </td>
+</tr>
+
+<tr>
+    <td>Qualification</td>
+    <td colspan="2">
+    <table border="1" width="100%">
+            <tr>
+                <th>SL NO</th>
+                <th>Examination</th>
+                <th>BOARD</th>
+                <th>PERCENTAGE</th>
+                <th>YEAR OF PASSING</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Class X</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Class XII</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>DEGREE</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+    </table>
+    </td>
+</tr>
+
+<tr>
+    <td>COURSE APPLIED FOR</td>
+    <td colspan="2">
+        <input type="radio" name="course" value="MCA"> MCA
+        <input type="radio" name="course" value="M.Tech"> M.Tech
+        <input type="radio" name="course" value="M.Sc"> M.Sc
+        <input type="radio" name="course" value="Ph.D"> Ph.D
+    </td>
+</tr>
+
+<tr>
+    <td>PASSWORD</td>
+    <td><input type="password"></td>
+    <td>(max 30 characters)</td>
+</tr>
+
+<tr>
+    <td>Date of TC:</td>
+    <td><input type="date"></td>
+</tr>
+
+<tr>
+    <td colspan="3" align="center">
+        <input type="submit" value="SUBMIT">
+        <input type="reset" value="RESET">
+    </td>
+</tr>
+
+</table>
+
+<p id="result"></p>
+</form>
+
+<script>
+    const form = document.getElementById("registrationForm");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const fname = document.getElementById("fname").value.trim();
+        const lname = document.getElementById("lname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mobile = document.getElementById("mobile").value.trim();
+
+        const fnameError = document.getElementById("fnameError");
+        const lnameError = document.getElementById("lnameError");
+        const emailError = document.getElementById("emailError");
+        const mobileError = document.getElementById("mobileError");
+        const result = document.getElementById("result");
+
+        fnameError.textContent = "";
+        lnameError.textContent = "";
+        emailError.textContent = "";
+        mobileError.textContent = "";
+        result.textContent = "";
+        result.className = "";
+
+        let valid = true;
+
+        const namePattern = /^[A-Za-z ]{1,30}$/;
+
+        if (!namePattern.test(fname)) {
+            fnameError.textContent =
+                " Enter 1-30 letters only.";
+            valid = false;
+        }
+
+        if (!namePattern.test(lname)) {
+            lnameError.textContent =
+                " Enter 1-30 letters only.";
+            valid = false;
+        }
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            emailError.textContent =
+                " Enter a valid email address.";
+            valid = false;
+        }
+
+        const mobilePattern = /^[0-9]{9}$/;
+
+        if (!mobilePattern.test(mobile)) {
+            mobileError.textContent =
+                " Enter a valid 10-digit mobile number.";
+            valid = false;
+        }
+      
+        if (valid) {
+            result.textContent =
+                "Form validation successful!";
+            result.className = "success";
+        }
+    });
+
+    // Clear validation messages when the form is reset
+    form.addEventListener("reset", function() {
+        document.getElementById("fnameError").textContent = "";
+        document.getElementById("lnameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("mobileError").textContent = "";
+
+        const result = document.getElementById("result");
+        result.textContent = "";
+        result.className = "";
+    });
+</script>
+
+</body>
+</html>
+

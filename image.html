@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Change image</title>
+</head>
+<body>
+<h2>Turn light On/Off</h2>
+<img id="bulb" src="/home/user/Downloads/bulboff.jpeg"alt="bulb" width="250">
+<br>
+<button Onclick="TurnOn()">TurnOn</button>
+<button Onclick="TurnOff()">TurnOff</button>
+
+<script>
+function TurnOn() {
+      document.getElementById("bulb").src="/home/user/Downloads/images.jpeg";
+  }
+  function TurnOff() {
+      document.getElementById("bulb").src="/home/user/Downloads/bulboff.jpeg";
+  }
+  
+</script>
+</body>
+</html>
